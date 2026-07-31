@@ -1,0 +1,331 @@
+[2026-07-24 10:17:45] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:17:45] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-24 10:17:45] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:17:45] [pipeline    ] INFO       Fase 0: Preparación y validación
+[2026-07-24 10:17:45] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:17:45] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:17:45] [pipeline    ] INFO       FASE 0: Preparación y validación
+[2026-07-24 10:17:45] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:17:51] [pipeline    ] ERROR      ❌ Fase 0 falló: "Columna de energía 'SD_RS_fEnergy' no encontrada. Disponibles: ['FD_RS_fEnergy\\tFD_RS_fCoreTimeSecond\\tFD_RS_fCoreTimeNanoSecond\\tFD_RS_fGalacticLong\\tFD_RS_fGalacticLat\\tFD_RS_fDeclination\\tFD_RS_fRightAscension\\tFD_RS_fEnergyError\\tFD_RS_fCoreNorthError\\tFD_RS_fCoreEastError\\tFD_RS_fCoreNorthEastCorrelation\\tFD_RS_fZenithError\\tFD_RS_fAzimuthError\\tFD_RS_fZenithAzimuthCorrelation\\tFD_RS_fRightAscensionError\\tFD_RS_fDeclinationError\\tFD_RS_fRDCorrelation\\tFD_RS_fGalacticLongError\\tFD_RS_fGalacticLatError\\tFD_RS_fLongLatCorrelation\\tFD_RS_fTimTrackObs\\tFD_RS_fXFOVMin\\tFD_RS_fXFOVMax\\tFD_RS_fZXmax\\tFD_RS_fAngTrackObs\\tFD_RS_fXTrackMin\\tFD_RS_fXTrackMax\\tFD_RS_fdEdXmax\\tFD_RS_fdEdXmaxError\\tFD_RS_fXmax\\tFD_RS_fXmaxError\\tFD_RS_fXmaxChi\\tFD_RS_fX0\\tFD_RS_fLambda\\tFD_RS_fFWHM\\tFD_RS_fAsym\\tFD_RS_fUspL\\tFD_RS_fUspLError\\tFD_RS_fUspR\\tFD_RS_fUspRError\\tFD_RS_fRhodEdXmaxXMax\\tFD_RS_fGHChi2\\tFD_RS_fGHNdf\\tFD_RS_fLineFitChi2\\tFD_RS_fCalEnergy\\tFD_RS_fCalEnergyError\\tFD_RS_fDistXmax\\tFD_RS_fHeightXmax\\tFD_RS_fCoreXmaxDist\\tFD_RS_fAttXmax\\tFD_RS_fMieAttXmax\\tFD_RS_fMieCorrection\\tFD_RS_fRayleighCorrection\\tFD_RS_fEnergyAtmError\\tFD_RS_fXmaxAtmError\\tFD_RS_fMaxCloudFracEyeShower\\tFD_RAL_fMinAngle\\tFD_RAL_fMaxAngle\\tFD_RAL_fMeanAngle\\tFD_RAL_fXmaxAngle\\tFD_RAL_fZeta\\tFD_RG_fSDPTheta\\tFD_RG_fSDPPhi\\tFD_RG_fT0\\tFD_RG_fRp\\tFD_RG_fSDPThetaError\\tFD_RG_fSDPPhiError\\tFD_RG_fRhoThetaPhi\\tFD_RG_fSDPChi2\\tFD_RG_fT0Error\\tFD_RG_fChi0Error\\tFD_RG_fRpError\\tFD_RG_fRhoChi0T0\\tFD_RG_fRhoChi0Rp\\tFD_RG_fRhoRpT0\\tFD_RG_fTimeFitChi2\\tFD_RG_fTimeFitFDChi2\\tFD_RG_fLinearTimeFitChi2\\tFD_RG_fNorthEastCorrelation\\tFD_RG_fNorthThetaCorrelation\\tFD_RG_fNorthPhiCorrelation\\tFD_RG_fNorthTCoreCorrelation\\tFD_RG_fEastThetaCorrelation\\tFD_RG_fEastPhiCorrelation\\tFD_RG_fEastTCoreCorrelation\\tFD_RG_fThetaPhiCorrelation\\tFD_RG_fThetaTCoreCorrelation\\tFD_RG_fPhiTCoreCorrelation\\tFD_RG_fAxisFitChi2\\tFD_RG_fAxisDist\\tFD_RG_fSDFDdT\\tFD_RG_fSDPDist\\tFD_RG_fmeanPixelRMS\\tFD_RG_fmeanADCRMS\\tFD_fT3SDPTheta\\tFD_fT3SDPPhi\\tFD_fT3Azimuth\\tFD_fT3TimeAtGround\\tFD_fT3TimeAtGroundNanoSecond\\tFD_RS_fCoreSiteCS_fX\\tFD_RS_fCoreSiteCS_fY\\tFD_RS_fCoreSiteCS_fZ\\tFD_RS_fCoreUTMCS_fX\\tFD_RS_fCoreUTMCS_fY\\tFD_RS_fCoreUTMCS_fZ\\tFD_RS_fAxisCoreCS_fX\\tFD_RS_fAxisCoreCS_fY\\tFD_RS_fAxisCoreCS_fZ\\tFD_RS_fAxisSiteCS_fX\\tFD_RS_fAxisSiteCS_fY\\tFD_RS_fAxisSiteCS_fZ', 'SD_fSdGPSSecond\\tSD_fSdGPSNanoSecond\\tSD_fYYMMDD\\tSD_fHHMMSS\\tSD_fAverageStationAge\\tSD_RS_fEnergy\\tSD_RS_fCoreTimeSecond\\tSD_RS_fCoreTimeNanoSecond\\tSD_RS_fGalacticLong\\tSD_RS_fGalacticLat\\tSD_RS_fDeclination\\tSD_RS_fRightAscension\\tSD_RS_fEnergyError\\tSD_RS_fCoreNorthError\\tSD_RS_fCoreEastError\\tSD_RS_fCoreNorthEastCorrelation\\tSD_RS_fZenithError\\tSD_RS_fAzimuthError\\tSD_RS_fZenithAzimuthCorrelation\\tSD_RS_fRightAscensionError\\tSD_RS_fDeclinationError\\tSD_RS_fRDCorrelation\\tSD_RS_fGalacticLongError\\tSD_RS_fGalacticLatError\\tSD_RS_fLongLatCorrelation\\tSD_RS_fX\\tSD_RS_fY\\tSD_RS_fZ\\tSD_RS_P_fX\\tSD_RS_P_fY\\tSD_RS_P_fZ\\tSD_RS_fCurvature\\tSD_RS_fCurvatureError\\tSD_RS_fCt0\\tSD_RS_fCt0Error\\tSD_RS_RP_fX\\tSD_RS_RP_fY\\tSD_RS_RP_fZ\\tSD_RS_fRiseTime1000\\tSD_RS_fRiseTime1000Error\\tSD_RS_fAngleChi2\\tSD_RS_fAngleNdof\\tSD_RS_fTimeResidualMean\\tSD_RS_fTimeResidualSpread\\tSD_RS_fRopt\\tSD_RS_fEnergyLDFSys\\tSD_RS_R1000_fRiseTime1000\\tSD_RS_R1000_fRiseTime1000Error\\tSD_RS_R1000_fRiseTimeChi2\\tSD_RS_R1000_fRiseTimeNDF\\tSD_RS_R1000_fAlpha\\tSD_RS_R1000_fBeta\\tSD_URS_fEnergy\\tSD_URS_fCoreTimeSecond\\tSD_URS_fCoreTimeNanoSecond\\tSD_URS_fGalacticLong\\tSD_URS_fGalacticLat\\tSD_URS_fDeclination\\tSD_URS_fRightAscension\\tSD_URS_fEnergyError\\tSD_URS_fCoreNorthError\\tSD_URS_fCoreEastError\\tSD_URS_fZenithError\\tSD_URS_fAzimuthError\\tSD_URS_fRightAscensionError\\tSD_URS_fDeclinationError\\tSD_URS_fRDCorrelation\\tSD_URS_fGalacticLongError\\tSD_URS_fGalacticLatError\\tSD_URS_fLongLatCorrelation\\tSD_URS_fNmu\\tSD_URS_fNmuError\\tSD_URS_fXmax\\tSD_URS_fXmaxError']"
+[2026-07-24 10:17:51] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:17:51] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-24 10:17:51] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:17:51] [pipeline    ] INFO       Fase 0: ❌ ERROR
+[2026-07-24 10:17:51] [pipeline    ] INFO       Tiempo total: 6.5s
+[2026-07-24 10:17:51] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:35:08] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:35:08] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-24 10:35:08] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:35:08] [pipeline    ] INFO       Fase 0: Preparación y validación
+[2026-07-24 10:35:08] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:35:08] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:35:08] [pipeline    ] INFO       FASE 0: Preparación y validación
+[2026-07-24 10:35:08] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:35:09] [pipeline    ] ERROR      ❌ Fase 0 falló: module 'logging' has no attribute 'get_logger'
+[2026-07-24 10:35:09] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:35:09] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-24 10:35:09] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:35:09] [pipeline    ] INFO       Fase 0: ❌ ERROR
+[2026-07-24 10:35:09] [pipeline    ] INFO       Tiempo total: 1.2s
+[2026-07-24 10:35:09] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:40:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:40:53] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-24 10:40:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:40:53] [pipeline    ] INFO       Fase 0: Preparación y validación
+[2026-07-24 10:40:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:40:53] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:40:53] [pipeline    ] INFO       FASE 0: Preparación y validación
+[2026-07-24 10:40:53] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:40:53] [pipeline    ] ERROR      ❌ Fase 0 falló: module 'src.phase0_prepare' has no attribute 'run'
+[2026-07-24 10:40:53] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:40:53] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-24 10:40:53] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:40:53] [pipeline    ] INFO       Fase 0: ❌ ERROR
+[2026-07-24 10:40:53] [pipeline    ] INFO       Tiempo total: 0.3s
+[2026-07-24 10:40:53] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:41:36] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:41:36] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-24 10:41:36] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:41:36] [pipeline    ] INFO       Fase 0: Preparación y validación
+[2026-07-24 10:41:36] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-24 10:41:36] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:41:36] [pipeline    ] INFO       FASE 0: Preparación y validación
+[2026-07-24 10:41:36] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:41:42] [pipeline    ] ERROR      ❌ Fase 0 falló: "Columna de energía 'SD_RS_fEnergy' no encontrada. Disponibles: ['FD_RS_fEnergy\\tFD_RS_fCoreTimeSecond\\tFD_RS_fCoreTimeNanoSecond\\tFD_RS_fGalacticLong\\tFD_RS_fGalacticLat\\tFD_RS_fDeclination\\tFD_RS_fRightAscension\\tFD_RS_fEnergyError\\tFD_RS_fCoreNorthError\\tFD_RS_fCoreEastError\\tFD_RS_fCoreNorthEastCorrelation\\tFD_RS_fZenithError\\tFD_RS_fAzimuthError\\tFD_RS_fZenithAzimuthCorrelation\\tFD_RS_fRightAscensionError\\tFD_RS_fDeclinationError\\tFD_RS_fRDCorrelation\\tFD_RS_fGalacticLongError\\tFD_RS_fGalacticLatError\\tFD_RS_fLongLatCorrelation\\tFD_RS_fTimTrackObs\\tFD_RS_fXFOVMin\\tFD_RS_fXFOVMax\\tFD_RS_fZXmax\\tFD_RS_fAngTrackObs\\tFD_RS_fXTrackMin\\tFD_RS_fXTrackMax\\tFD_RS_fdEdXmax\\tFD_RS_fdEdXmaxError\\tFD_RS_fXmax\\tFD_RS_fXmaxError\\tFD_RS_fXmaxChi\\tFD_RS_fX0\\tFD_RS_fLambda\\tFD_RS_fFWHM\\tFD_RS_fAsym\\tFD_RS_fUspL\\tFD_RS_fUspLError\\tFD_RS_fUspR\\tFD_RS_fUspRError\\tFD_RS_fRhodEdXmaxXMax\\tFD_RS_fGHChi2\\tFD_RS_fGHNdf\\tFD_RS_fLineFitChi2\\tFD_RS_fCalEnergy\\tFD_RS_fCalEnergyError\\tFD_RS_fDistXmax\\tFD_RS_fHeightXmax\\tFD_RS_fCoreXmaxDist\\tFD_RS_fAttXmax\\tFD_RS_fMieAttXmax\\tFD_RS_fMieCorrection\\tFD_RS_fRayleighCorrection\\tFD_RS_fEnergyAtmError\\tFD_RS_fXmaxAtmError\\tFD_RS_fMaxCloudFracEyeShower\\tFD_RAL_fMinAngle\\tFD_RAL_fMaxAngle\\tFD_RAL_fMeanAngle\\tFD_RAL_fXmaxAngle\\tFD_RAL_fZeta\\tFD_RG_fSDPTheta\\tFD_RG_fSDPPhi\\tFD_RG_fT0\\tFD_RG_fRp\\tFD_RG_fSDPThetaError\\tFD_RG_fSDPPhiError\\tFD_RG_fRhoThetaPhi\\tFD_RG_fSDPChi2\\tFD_RG_fT0Error\\tFD_RG_fChi0Error\\tFD_RG_fRpError\\tFD_RG_fRhoChi0T0\\tFD_RG_fRhoChi0Rp\\tFD_RG_fRhoRpT0\\tFD_RG_fTimeFitChi2\\tFD_RG_fTimeFitFDChi2\\tFD_RG_fLinearTimeFitChi2\\tFD_RG_fNorthEastCorrelation\\tFD_RG_fNorthThetaCorrelation\\tFD_RG_fNorthPhiCorrelation\\tFD_RG_fNorthTCoreCorrelation\\tFD_RG_fEastThetaCorrelation\\tFD_RG_fEastPhiCorrelation\\tFD_RG_fEastTCoreCorrelation\\tFD_RG_fThetaPhiCorrelation\\tFD_RG_fThetaTCoreCorrelation\\tFD_RG_fPhiTCoreCorrelation\\tFD_RG_fAxisFitChi2\\tFD_RG_fAxisDist\\tFD_RG_fSDFDdT\\tFD_RG_fSDPDist\\tFD_RG_fmeanPixelRMS\\tFD_RG_fmeanADCRMS\\tFD_fT3SDPTheta\\tFD_fT3SDPPhi\\tFD_fT3Azimuth\\tFD_fT3TimeAtGround\\tFD_fT3TimeAtGroundNanoSecond\\tFD_RS_fCoreSiteCS_fX\\tFD_RS_fCoreSiteCS_fY\\tFD_RS_fCoreSiteCS_fZ\\tFD_RS_fCoreUTMCS_fX\\tFD_RS_fCoreUTMCS_fY\\tFD_RS_fCoreUTMCS_fZ\\tFD_RS_fAxisCoreCS_fX\\tFD_RS_fAxisCoreCS_fY\\tFD_RS_fAxisCoreCS_fZ\\tFD_RS_fAxisSiteCS_fX\\tFD_RS_fAxisSiteCS_fY\\tFD_RS_fAxisSiteCS_fZ', 'SD_fSdGPSSecond\\tSD_fSdGPSNanoSecond\\tSD_fYYMMDD\\tSD_fHHMMSS\\tSD_fAverageStationAge\\tSD_RS_fEnergy\\tSD_RS_fCoreTimeSecond\\tSD_RS_fCoreTimeNanoSecond\\tSD_RS_fGalacticLong\\tSD_RS_fGalacticLat\\tSD_RS_fDeclination\\tSD_RS_fRightAscension\\tSD_RS_fEnergyError\\tSD_RS_fCoreNorthError\\tSD_RS_fCoreEastError\\tSD_RS_fCoreNorthEastCorrelation\\tSD_RS_fZenithError\\tSD_RS_fAzimuthError\\tSD_RS_fZenithAzimuthCorrelation\\tSD_RS_fRightAscensionError\\tSD_RS_fDeclinationError\\tSD_RS_fRDCorrelation\\tSD_RS_fGalacticLongError\\tSD_RS_fGalacticLatError\\tSD_RS_fLongLatCorrelation\\tSD_RS_fX\\tSD_RS_fY\\tSD_RS_fZ\\tSD_RS_P_fX\\tSD_RS_P_fY\\tSD_RS_P_fZ\\tSD_RS_fCurvature\\tSD_RS_fCurvatureError\\tSD_RS_fCt0\\tSD_RS_fCt0Error\\tSD_RS_RP_fX\\tSD_RS_RP_fY\\tSD_RS_RP_fZ\\tSD_RS_fRiseTime1000\\tSD_RS_fRiseTime1000Error\\tSD_RS_fAngleChi2\\tSD_RS_fAngleNdof\\tSD_RS_fTimeResidualMean\\tSD_RS_fTimeResidualSpread\\tSD_RS_fRopt\\tSD_RS_fEnergyLDFSys\\tSD_RS_R1000_fRiseTime1000\\tSD_RS_R1000_fRiseTime1000Error\\tSD_RS_R1000_fRiseTimeChi2\\tSD_RS_R1000_fRiseTimeNDF\\tSD_RS_R1000_fAlpha\\tSD_RS_R1000_fBeta\\tSD_URS_fEnergy\\tSD_URS_fCoreTimeSecond\\tSD_URS_fCoreTimeNanoSecond\\tSD_URS_fGalacticLong\\tSD_URS_fGalacticLat\\tSD_URS_fDeclination\\tSD_URS_fRightAscension\\tSD_URS_fEnergyError\\tSD_URS_fCoreNorthError\\tSD_URS_fCoreEastError\\tSD_URS_fZenithError\\tSD_URS_fAzimuthError\\tSD_URS_fRightAscensionError\\tSD_URS_fDeclinationError\\tSD_URS_fRDCorrelation\\tSD_URS_fGalacticLongError\\tSD_URS_fGalacticLatError\\tSD_URS_fLongLatCorrelation\\tSD_URS_fNmu\\tSD_URS_fNmuError\\tSD_URS_fXmax\\tSD_URS_fXmaxError']"
+[2026-07-24 10:41:42] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:41:42] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-24 10:41:42] [pipeline    ] INFO     ======================================================================
+[2026-07-24 10:41:42] [pipeline    ] INFO       Fase 0: ❌ ERROR
+[2026-07-24 10:41:42] [pipeline    ] INFO       Tiempo total: 6.4s
+[2026-07-24 10:41:42] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:32:48] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:32:48] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 20:32:48] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:32:48] [pipeline    ] INFO       Fase 0: Preparación y validación
+[2026-07-27 20:32:48] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:32:48] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:32:48] [pipeline    ] INFO       FASE 0: Preparación y validación
+[2026-07-27 20:32:48] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:32:54] [pipeline    ] ERROR      ❌ Fase 0 falló: "Columna de energía 'SD_RS_fEnergy' no encontrada. Disponibles: ['FD_RS_fEnergy\\tFD_RS_fCoreTimeSecond\\tFD_RS_fCoreTimeNanoSecond\\tFD_RS_fGalacticLong\\tFD_RS_fGalacticLat\\tFD_RS_fDeclination\\tFD_RS_fRightAscension\\tFD_RS_fEnergyError\\tFD_RS_fCoreNorthError\\tFD_RS_fCoreEastError\\tFD_RS_fCoreNorthEastCorrelation\\tFD_RS_fZenithError\\tFD_RS_fAzimuthError\\tFD_RS_fZenithAzimuthCorrelation\\tFD_RS_fRightAscensionError\\tFD_RS_fDeclinationError\\tFD_RS_fRDCorrelation\\tFD_RS_fGalacticLongError\\tFD_RS_fGalacticLatError\\tFD_RS_fLongLatCorrelation\\tFD_RS_fTimTrackObs\\tFD_RS_fXFOVMin\\tFD_RS_fXFOVMax\\tFD_RS_fZXmax\\tFD_RS_fAngTrackObs\\tFD_RS_fXTrackMin\\tFD_RS_fXTrackMax\\tFD_RS_fdEdXmax\\tFD_RS_fdEdXmaxError\\tFD_RS_fXmax\\tFD_RS_fXmaxError\\tFD_RS_fXmaxChi\\tFD_RS_fX0\\tFD_RS_fLambda\\tFD_RS_fFWHM\\tFD_RS_fAsym\\tFD_RS_fUspL\\tFD_RS_fUspLError\\tFD_RS_fUspR\\tFD_RS_fUspRError\\tFD_RS_fRhodEdXmaxXMax\\tFD_RS_fGHChi2\\tFD_RS_fGHNdf\\tFD_RS_fLineFitChi2\\tFD_RS_fCalEnergy\\tFD_RS_fCalEnergyError\\tFD_RS_fDistXmax\\tFD_RS_fHeightXmax\\tFD_RS_fCoreXmaxDist\\tFD_RS_fAttXmax\\tFD_RS_fMieAttXmax\\tFD_RS_fMieCorrection\\tFD_RS_fRayleighCorrection\\tFD_RS_fEnergyAtmError\\tFD_RS_fXmaxAtmError\\tFD_RS_fMaxCloudFracEyeShower\\tFD_RAL_fMinAngle\\tFD_RAL_fMaxAngle\\tFD_RAL_fMeanAngle\\tFD_RAL_fXmaxAngle\\tFD_RAL_fZeta\\tFD_RG_fSDPTheta\\tFD_RG_fSDPPhi\\tFD_RG_fT0\\tFD_RG_fRp\\tFD_RG_fSDPThetaError\\tFD_RG_fSDPPhiError\\tFD_RG_fRhoThetaPhi\\tFD_RG_fSDPChi2\\tFD_RG_fT0Error\\tFD_RG_fChi0Error\\tFD_RG_fRpError\\tFD_RG_fRhoChi0T0\\tFD_RG_fRhoChi0Rp\\tFD_RG_fRhoRpT0\\tFD_RG_fTimeFitChi2\\tFD_RG_fTimeFitFDChi2\\tFD_RG_fLinearTimeFitChi2\\tFD_RG_fNorthEastCorrelation\\tFD_RG_fNorthThetaCorrelation\\tFD_RG_fNorthPhiCorrelation\\tFD_RG_fNorthTCoreCorrelation\\tFD_RG_fEastThetaCorrelation\\tFD_RG_fEastPhiCorrelation\\tFD_RG_fEastTCoreCorrelation\\tFD_RG_fThetaPhiCorrelation\\tFD_RG_fThetaTCoreCorrelation\\tFD_RG_fPhiTCoreCorrelation\\tFD_RG_fAxisFitChi2\\tFD_RG_fAxisDist\\tFD_RG_fSDFDdT\\tFD_RG_fSDPDist\\tFD_RG_fmeanPixelRMS\\tFD_RG_fmeanADCRMS\\tFD_fT3SDPTheta\\tFD_fT3SDPPhi\\tFD_fT3Azimuth\\tFD_fT3TimeAtGround\\tFD_fT3TimeAtGroundNanoSecond\\tFD_RS_fCoreSiteCS_fX\\tFD_RS_fCoreSiteCS_fY\\tFD_RS_fCoreSiteCS_fZ\\tFD_RS_fCoreUTMCS_fX\\tFD_RS_fCoreUTMCS_fY\\tFD_RS_fCoreUTMCS_fZ\\tFD_RS_fAxisCoreCS_fX\\tFD_RS_fAxisCoreCS_fY\\tFD_RS_fAxisCoreCS_fZ\\tFD_RS_fAxisSiteCS_fX\\tFD_RS_fAxisSiteCS_fY\\tFD_RS_fAxisSiteCS_fZ', 'SD_fSdGPSSecond\\tSD_fSdGPSNanoSecond\\tSD_fYYMMDD\\tSD_fHHMMSS\\tSD_fAverageStationAge\\tSD_RS_fEnergy\\tSD_RS_fCoreTimeSecond\\tSD_RS_fCoreTimeNanoSecond\\tSD_RS_fGalacticLong\\tSD_RS_fGalacticLat\\tSD_RS_fDeclination\\tSD_RS_fRightAscension\\tSD_RS_fEnergyError\\tSD_RS_fCoreNorthError\\tSD_RS_fCoreEastError\\tSD_RS_fCoreNorthEastCorrelation\\tSD_RS_fZenithError\\tSD_RS_fAzimuthError\\tSD_RS_fZenithAzimuthCorrelation\\tSD_RS_fRightAscensionError\\tSD_RS_fDeclinationError\\tSD_RS_fRDCorrelation\\tSD_RS_fGalacticLongError\\tSD_RS_fGalacticLatError\\tSD_RS_fLongLatCorrelation\\tSD_RS_fX\\tSD_RS_fY\\tSD_RS_fZ\\tSD_RS_P_fX\\tSD_RS_P_fY\\tSD_RS_P_fZ\\tSD_RS_fCurvature\\tSD_RS_fCurvatureError\\tSD_RS_fCt0\\tSD_RS_fCt0Error\\tSD_RS_RP_fX\\tSD_RS_RP_fY\\tSD_RS_RP_fZ\\tSD_RS_fRiseTime1000\\tSD_RS_fRiseTime1000Error\\tSD_RS_fAngleChi2\\tSD_RS_fAngleNdof\\tSD_RS_fTimeResidualMean\\tSD_RS_fTimeResidualSpread\\tSD_RS_fRopt\\tSD_RS_fEnergyLDFSys\\tSD_RS_R1000_fRiseTime1000\\tSD_RS_R1000_fRiseTime1000Error\\tSD_RS_R1000_fRiseTimeChi2\\tSD_RS_R1000_fRiseTimeNDF\\tSD_RS_R1000_fAlpha\\tSD_RS_R1000_fBeta\\tSD_URS_fEnergy\\tSD_URS_fCoreTimeSecond\\tSD_URS_fCoreTimeNanoSecond\\tSD_URS_fGalacticLong\\tSD_URS_fGalacticLat\\tSD_URS_fDeclination\\tSD_URS_fRightAscension\\tSD_URS_fEnergyError\\tSD_URS_fCoreNorthError\\tSD_URS_fCoreEastError\\tSD_URS_fZenithError\\tSD_URS_fAzimuthError\\tSD_URS_fRightAscensionError\\tSD_URS_fDeclinationError\\tSD_URS_fRDCorrelation\\tSD_URS_fGalacticLongError\\tSD_URS_fGalacticLatError\\tSD_URS_fLongLatCorrelation\\tSD_URS_fNmu\\tSD_URS_fNmuError\\tSD_URS_fXmax\\tSD_URS_fXmaxError']"
+[2026-07-27 20:32:54] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:32:54] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 20:32:54] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:32:54] [pipeline    ] INFO       Fase 0: ❌ ERROR
+[2026-07-27 20:32:54] [pipeline    ] INFO       Tiempo total: 6.4s
+[2026-07-27 20:32:54] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:40:02] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:40:02] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 20:40:02] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:40:02] [pipeline    ] INFO       Fase 0: Preparación y validación
+[2026-07-27 20:40:02] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:40:02] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:40:02] [pipeline    ] INFO       FASE 0: Preparación y validación
+[2026-07-27 20:40:02] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:40:10] [pipeline    ] INFO       ✅ Fase 0 completada en 8.6s
+[2026-07-27 20:40:10] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:40:10] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 20:40:10] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:40:10] [pipeline    ] INFO       Fase 0: ✅ OK
+[2026-07-27 20:40:10] [pipeline    ] INFO       Tiempo total: 8.6s
+[2026-07-27 20:40:10] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:47:39] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:47:39] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 20:47:39] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:47:39] [pipeline    ] INFO       Fase 1: Reducción de dimensionalidad
+[2026-07-27 20:47:39] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:47:39] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:47:39] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad
+[2026-07-27 20:47:39] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:47:40] [pipeline    ] INFO       ✅ Fase 1 completada en 1.4s
+[2026-07-27 20:47:40] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:47:40] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 20:47:40] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:47:40] [pipeline    ] INFO       Fase 1: ✅ OK
+[2026-07-27 20:47:40] [pipeline    ] INFO       Tiempo total: 1.4s
+[2026-07-27 20:47:40] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:50:49] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:50:49] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 20:50:49] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:50:49] [pipeline    ] INFO       Fase 2: Generación de features cuánticas
+[2026-07-27 20:50:49] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 20:50:49] [pipeline    ] INFO     ======================================================================
+[2026-07-27 20:50:49] [pipeline    ] INFO       FASE 2: Generación de features cuánticas
+[2026-07-27 20:50:49] [pipeline    ] INFO     ======================================================================
+[2026-07-27 21:57:25] [pipeline    ] INFO       ✅ Fase 2 completada en 3996.1s
+[2026-07-27 21:57:25] [pipeline    ] INFO     ======================================================================
+[2026-07-27 21:57:25] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 21:57:25] [pipeline    ] INFO     ======================================================================
+[2026-07-27 21:57:25] [pipeline    ] INFO       Fase 2: ✅ OK
+[2026-07-27 21:57:25] [pipeline    ] INFO       Tiempo total: 3996.1s
+[2026-07-27 21:57:25] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:09:47] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:09:47] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 22:09:47] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:09:47] [pipeline    ] INFO       Fase 3: Entrenamiento XGBoost
+[2026-07-27 22:09:47] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:09:47] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:09:47] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost
+[2026-07-27 22:09:47] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:09:48] [pipeline    ] INFO       ✅ Fase 3 completada en 1.4s
+[2026-07-27 22:09:48] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:09:48] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 22:09:48] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:09:48] [pipeline    ] INFO       Fase 3: ✅ OK
+[2026-07-27 22:09:48] [pipeline    ] INFO       Tiempo total: 1.4s
+[2026-07-27 22:09:48] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:11:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:11:04] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 22:11:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:11:04] [pipeline    ] INFO       Fase 4: Predicción sobre datos nuevos
+[2026-07-27 22:11:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:11:04] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:11:04] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-07-27 22:11:04] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:11:42] [pipeline    ] INFO       ✅ Fase 4 completada en 38.0s
+[2026-07-27 22:11:42] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:11:42] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 22:11:42] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:11:42] [pipeline    ] INFO       Fase 4: ✅ OK
+[2026-07-27 22:11:42] [pipeline    ] INFO       Tiempo total: 38.0s
+[2026-07-27 22:11:42] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:15:28] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:15:28] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-27 22:15:28] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:15:28] [pipeline    ] INFO       Fase 5: Análisis y visualizaciones
+[2026-07-27 22:15:28] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-27 22:15:28] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:15:28] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones
+[2026-07-27 22:15:28] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:15:29] [pipeline    ] INFO       ✅ Fase 5 completada en 0.6s
+[2026-07-27 22:15:29] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:15:29] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-27 22:15:29] [pipeline    ] INFO     ======================================================================
+[2026-07-27 22:15:29] [pipeline    ] INFO       Fase 5: ✅ OK
+[2026-07-27 22:15:29] [pipeline    ] INFO       Tiempo total: 0.6s
+[2026-07-27 22:15:29] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:13:35] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:13:35] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 22:13:35] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:13:35] [pipeline    ] INFO       Fase 1: Reducción de dimensionalidad
+[2026-07-28 22:13:35] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:13:35] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:13:35] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad
+[2026-07-28 22:13:35] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:13:35] [pipeline    ] ERROR      ❌ Fase 1 falló: No module named 'Recreacion_pipeline'
+[2026-07-28 22:13:35] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:13:35] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-28 22:13:35] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:13:35] [pipeline    ] INFO       Fase 1: ❌ ERROR
+[2026-07-28 22:13:35] [pipeline    ] INFO       Tiempo total: 0.1s
+[2026-07-28 22:13:35] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:14:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:14:51] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 22:14:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:14:51] [pipeline    ] INFO       Fase 1: Reducción de dimensionalidad
+[2026-07-28 22:14:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:14:51] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:14:51] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad
+[2026-07-28 22:14:51] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:14:53] [pipeline    ] INFO       ✅ Fase 1 completada en 1.5s
+[2026-07-28 22:14:53] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:14:53] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-28 22:14:53] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:14:53] [pipeline    ] INFO       Fase 1: ✅ OK
+[2026-07-28 22:14:53] [pipeline    ] INFO       Tiempo total: 1.5s
+[2026-07-28 22:14:53] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:19:01] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:19:01] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 22:19:01] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:19:01] [pipeline    ] INFO       Fase 2: Generación de features cuánticas
+[2026-07-28 22:19:01] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 22:19:01] [pipeline    ] INFO     ======================================================================
+[2026-07-28 22:19:01] [pipeline    ] INFO       FASE 2: Generación de features cuánticas
+[2026-07-28 22:19:01] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:27:49] [pipeline    ] INFO       ✅ Fase 2 completada en 4127.4s
+[2026-07-28 23:27:49] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:27:49] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-28 23:27:49] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:27:49] [pipeline    ] INFO       Fase 2: ✅ OK
+[2026-07-28 23:27:49] [pipeline    ] INFO       Tiempo total: 4127.4s
+[2026-07-28 23:27:49] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:33:16] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:33:16] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 23:33:16] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:33:16] [pipeline    ] INFO       Fase 3: Entrenamiento XGBoost
+[2026-07-28 23:33:16] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:33:16] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:33:16] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost
+[2026-07-28 23:33:16] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:33:24] [pipeline    ] INFO       ✅ Fase 3 completada en 8.2s
+[2026-07-28 23:33:24] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:33:24] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-28 23:33:24] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:33:24] [pipeline    ] INFO       Fase 3: ✅ OK
+[2026-07-28 23:33:24] [pipeline    ] INFO       Tiempo total: 8.2s
+[2026-07-28 23:33:24] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:36:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:36:04] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 23:36:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:36:04] [pipeline    ] INFO       Fase 4: Predicción sobre datos nuevos
+[2026-07-28 23:36:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:36:04] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:36:04] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-07-28 23:36:04] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:36:37] [pipeline    ] INFO       ✅ Fase 4 completada en 32.5s
+[2026-07-28 23:36:37] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:36:37] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-28 23:36:37] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:36:37] [pipeline    ] INFO       Fase 4: ✅ OK
+[2026-07-28 23:36:37] [pipeline    ] INFO       Tiempo total: 32.5s
+[2026-07-28 23:36:37] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:39:13] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:39:13] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 23:39:13] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:39:13] [pipeline    ] INFO       Fase 5: Análisis y visualizaciones
+[2026-07-28 23:39:13] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:39:13] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:39:13] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones
+[2026-07-28 23:39:13] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:39:29] [pipeline    ] INFO       ✅ Fase 5 completada en 15.8s
+[2026-07-28 23:39:29] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:39:29] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-28 23:39:29] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:39:29] [pipeline    ] INFO       Fase 5: ✅ OK
+[2026-07-28 23:39:29] [pipeline    ] INFO       Tiempo total: 15.8s
+[2026-07-28 23:39:29] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:52:24] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:52:24] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-28 23:52:24] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:52:24] [pipeline    ] INFO       Fase 4: Predicción sobre datos nuevos
+[2026-07-28 23:52:24] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-28 23:52:24] [pipeline    ] INFO     ======================================================================
+[2026-07-28 23:52:24] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-07-28 23:52:24] [pipeline    ] INFO     ======================================================================
+[2026-07-29 11:39:36] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 11:39:36] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-29 11:39:36] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 11:39:36] [pipeline    ] INFO       Fase 5: Análisis y visualizaciones
+[2026-07-29 11:39:36] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 11:39:36] [pipeline    ] INFO     ======================================================================
+[2026-07-29 11:39:36] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones
+[2026-07-29 11:39:36] [pipeline    ] INFO     ======================================================================
+[2026-07-29 11:39:53] [pipeline    ] INFO       ✅ Fase 5 completada en 16.4s
+[2026-07-29 11:39:53] [pipeline    ] INFO     ======================================================================
+[2026-07-29 11:39:53] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-29 11:39:53] [pipeline    ] INFO     ======================================================================
+[2026-07-29 11:39:53] [pipeline    ] INFO       Fase 5: ✅ OK
+[2026-07-29 11:39:53] [pipeline    ] INFO       Tiempo total: 16.4s
+[2026-07-29 11:39:53] [pipeline    ] INFO     ======================================================================
+[2026-07-29 17:09:37] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 17:09:37] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-29 17:09:37] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 17:09:37] [pipeline    ] INFO       Fase 4: Predicción sobre datos nuevos
+[2026-07-29 17:09:37] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 17:09:37] [pipeline    ] INFO     ======================================================================
+[2026-07-29 17:09:37] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-07-29 17:09:37] [pipeline    ] INFO     ======================================================================
+[2026-07-29 19:59:14] [pipeline    ] INFO       ✅ Fase 4 completada en 10177.0s
+[2026-07-29 19:59:14] [pipeline    ] INFO     ======================================================================
+[2026-07-29 19:59:14] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-29 19:59:14] [pipeline    ] INFO     ======================================================================
+[2026-07-29 19:59:14] [pipeline    ] INFO       Fase 4: ✅ OK
+[2026-07-29 19:59:14] [pipeline    ] INFO       Tiempo total: 10177.0s
+[2026-07-29 19:59:14] [pipeline    ] INFO     ======================================================================
+[2026-07-29 20:18:25] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 20:18:25] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-29 20:18:25] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 20:18:25] [pipeline    ] INFO       Fase 5: Análisis y visualizaciones
+[2026-07-29 20:18:25] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 20:18:25] [pipeline    ] INFO     ======================================================================
+[2026-07-29 20:18:25] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones
+[2026-07-29 20:18:25] [pipeline    ] INFO     ======================================================================
+[2026-07-29 20:18:41] [pipeline    ] INFO       ✅ Fase 5 completada en 15.9s
+[2026-07-29 20:18:41] [pipeline    ] INFO     ======================================================================
+[2026-07-29 20:18:41] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-29 20:18:41] [pipeline    ] INFO     ======================================================================
+[2026-07-29 20:18:41] [pipeline    ] INFO       Fase 5: ✅ OK
+[2026-07-29 20:18:41] [pipeline    ] INFO       Tiempo total: 15.9s
+[2026-07-29 20:18:41] [pipeline    ] INFO     ======================================================================
+[2026-07-29 21:33:05] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 21:33:05] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-29 21:33:05] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 21:33:05] [pipeline    ] INFO       Fase 2b: Optimización variacional (COBYLA+MSE)
+[2026-07-29 21:33:05] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-29 21:33:05] [pipeline    ] INFO     ======================================================================
+[2026-07-29 21:33:05] [pipeline    ] INFO       FASE 2b: Optimización variacional (COBYLA+MSE)
+[2026-07-29 21:33:05] [pipeline    ] INFO     ======================================================================
+[2026-07-30 19:21:45] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-30 19:21:45] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-07-30 19:21:45] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-30 19:21:45] [pipeline    ] INFO       Fase 5: Análisis y visualizaciones
+[2026-07-30 19:21:45] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-07-30 19:21:45] [pipeline    ] INFO     ======================================================================
+[2026-07-30 19:21:45] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones
+[2026-07-30 19:21:45] [pipeline    ] INFO     ======================================================================
+[2026-07-30 19:22:17] [pipeline    ] INFO       ✅ Fase 5 completada en 32.0s
+[2026-07-30 19:22:17] [pipeline    ] INFO     ======================================================================
+[2026-07-30 19:22:17] [pipeline    ] INFO     RESUMEN FINAL
+[2026-07-30 19:22:17] [pipeline    ] INFO     ======================================================================
+[2026-07-30 19:22:17] [pipeline    ] INFO       Fase 5: ✅ OK
+[2026-07-30 19:22:17] [pipeline    ] INFO       Tiempo total: 32.0s
+[2026-07-30 19:22:17] [pipeline    ] INFO     ======================================================================

@@ -1,0 +1,171 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# config.yaml — Configuración central del pipeline QML
+# ══════════════════════════════════════════════════════════════════════════════
+# Ubicación: raíz del proyecto (qml_xmax/)
+# Usado por: todas las fases vía src/utils/config_utils.py
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Rutas del proyecto ────────────────────────────────────────────────────────
+paths:
+  root_dir      : "."
+  data_dir      : "data"
+  raw_dir       : "data/raw"
+  processed_dir : "data/processed"
+  results_dir   : "data/results"
+  figures_dir   : "data/figures"
+  logs_dir      : "logs"
+  models_dir    : "models"
+
+# ── Barrido de hiperparámetros cuánticos (Fases 2 y 3) ───────────────────────
+sweep:
+  nq       : [2, 4, 6]
+  L        : [1, 2, 3]
+  encoding : ["angle", "zz"]
+
+# ── Logging ───────────────────────────────────────────────────────────────────
+logging:
+  level        : "INFO"   # DEBUG | INFO | WARNING | ERROR
+  save_to_file : true
+  log_dir      : "logs"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FASE 0 — Preparación del dataset
+# ══════════════════════════════════════════════════════════════════════════════
+phase0:
+  # Archivos de entrada
+  fd_file  : "data/raw/datosFD_num.csv"
+  sd_file  : "data/raw/datosSD_num.csv"
+
+  # Estrategia de merge entre FD y SD
+  # "index" → concatenación por posición de fila
+  # "<col>" → merge por columna ID común
+  merge_on : "index"
+
+  # Columna objetivo (target)
+  target_col : "FD_RS_fXmax"
+
+  # Corrección sistemática al target (valor de literatura)
+  # null → sin corrección
+  target_correction : 6.32536
+
+  # Columna de energía (para filtro y análisis posterior)
+  energy_col : "SD_RS_fEnergy"
+
+  # Filtro de energía: conservar filas donde
+  # E_min <= energy_col <= E_max
+  E_min : 18.5    # log10(E/eV)
+  E_max : 20.0    # log10(E/eV)
+
+  # Columnas a excluir explícitamente de features
+  # (además de target_col y energy_col)
+  exclude_cols : []
+
+  # Columnas de features explícitas (vacío → auto-detección)
+  # Si se define, se ignora exclude_cols
+  feature_cols : []
+
+  # División train / val / test (deben sumar 1.0)
+  splits:
+    train : 0.60
+    val   : 0.20
+    test  : 0.20
+
+  random_seed : 42
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FASE 1 — Reducción de dimensionalidad
+# ══════════════════════════════════════════════════════════════════════════════
+phase1:
+  method       : "pca"   # pca | umap | none
+  n_components : 4
+  random_seed  : 42
+  # solo si method=umap:
+  umap_n_neighbors : 15
+  umap_min_dist    : 0.1
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FASE 2 — Generación de características cuánticas
+# ══════════════════════════════════════════════════════════════════════════════
+phase2:
+  # Barrido (se toma de sweep si no se define aquí)
+  # Puedes sobreescribir para pruebas rápidas:
+  # nq: [2]
+  # L: [1]
+  # encoding: ["angle"]
+
+  random_seed : 42
+  batch_size  : 256     # muestras por batch para logging de progreso
+  overwrite   : true    # si false, salta combinaciones ya generadas
+
+# ── FASE 2b — Optimización variacional (COBYLA + MSE) ─────────────────
+phase2b:
+  max_iter : 100      # iteraciones máximas de COBYLA
+  # NOTA: cada iteración evalúa el circuito en TODOS los datos de train
+  # Con 15,846 eventos × 2q × 1L ≈ 5 min por iteración
+  # Recomendado: empezar con nq=2, L=1 para probar
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FASE 3 — Entrenamiento XGBoost
+# ══════════════════════════════════════════════════════════════════════════════
+phase3:
+  # Hiperparámetros XGBoost
+  n_estimators          : 300
+  max_depth             : 4
+  learning_rate         : 0.05
+  subsample             : 0.8
+  colsample_bytree      : 0.8
+  reg_lambda            : 1.0
+  reg_alpha             : 0.0
+  min_child_weight      : 1
+  early_stopping_rounds : 20
+  n_jobs                : -1
+
+  random_seed : 42
+  overwrite   : true    # si false, salta combinaciones ya entrenadas
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FASE 4 — Predicción sobre datos nuevos
+# ══════════════════════════════════════════════════════════════════════════════
+phase4:
+  # Archivo de datos nuevos (sin columna target)
+  new_data_path : "data/raw/SDnewversion.csv"
+
+# ══════════════════════════════════════════════════════════════════════════════
+# FASE 5 — Análisis y visualizaciones
+# ══════════════════════════════════════════════════════════════════════════════
+phase5:
+  # R² del modelo clásico de referencia (para comparación)
+  baseline_r2 : 0.0    # actualizar con el valor real tras entrenar baseline
+
+  # Bins de log10(E) para gráficas de Xmax y σ(Xmax)
+  energy_bin_min : 18.5
+  energy_bin_max : 20.0
+  energy_bin_step: 0.1   # → 15 bins de ancho 0.1
+
+  # Mínimo de eventos por bin para incluirlo en la gráfica
+  min_events_per_bin : 5
+
+  # Modelos hadrónicos de referencia
+  # Parámetros lineales: xmax = a + b*(logE - 18.5)
+  hadronic_models:
+    EPOS-LHC:
+      xmax_a    : 750.0
+      xmax_b    : 58.0
+      sigma_a   : 22.0
+      sigma_b   : -1.5
+      color     : "royalblue"
+      linestyle : "--"
+    Sibyll2.3d:
+      xmax_a    : 745.0
+      xmax_b    : 56.0
+      sigma_a   : 24.0
+      sigma_b   : -1.8
+      color     : "tomato"
+      linestyle : "-."
+    QGSJet-II:
+      xmax_a    : 740.0
+      xmax_b    : 55.0
+      sigma_a   : 26.0
+      sigma_b   : -2.0
+      color     : "seagreen"
+      linestyle : ":"
