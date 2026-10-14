@@ -49,7 +49,7 @@ phase0:
   target_correction : 6.32536
 
   # Columna de energía (para filtro y análisis posterior)
-  energy_col : "SD_RS_fEnergy"
+  energy_col : "SD_RS_fEnergy" # Vamos a cambiar el nombre de la columna a logE, nombre anterior SD_RS_fEnergy
 
   # Filtro de energía: conservar filas donde
   # E_min <= energy_col <= E_max
@@ -72,12 +72,15 @@ phase0:
 
   random_seed : 42
 
+  include_logE: true # ,- activa añadir logE como feature
+  logE_already_log: true # ,- true si la columna ya es log10(E)
+
 # ══════════════════════════════════════════════════════════════════════════════
 # FASE 1 — Reducción de dimensionalidad
 # ══════════════════════════════════════════════════════════════════════════════
 phase1:
   method       : "pca"   # pca | umap | none
-  n_components : 4
+  n_components : 30
   random_seed  : 42
   # solo si method=umap:
   umap_n_neighbors : 15
@@ -109,8 +112,8 @@ phase2b:
 # ══════════════════════════════════════════════════════════════════════════════
 phase3:
   # Hiperparámetros XGBoost
-  n_estimators          : 300
-  max_depth             : 4
+  n_estimators          : 50
+  max_depth             : 3
   learning_rate         : 0.05
   subsample             : 0.8
   colsample_bytree      : 0.8
@@ -119,7 +122,6 @@ phase3:
   min_child_weight      : 1
   early_stopping_rounds : 20
   n_jobs                : -1
-
   random_seed : 42
   overwrite   : true    # si false, salta combinaciones ya entrenadas
 
@@ -169,3 +171,219 @@ phase5:
       sigma_b   : -2.0
       color     : "seagreen"
       linestyle : ":"
+
+      # ══════════════════════════════════════════════════════
+# PENDIENTE 3 — XGBoost con primeras 4 features + ⟨Z⟩
+# ══════════════════════════════════════════════════════
+pendiente3:
+  n_features: 4                    # primeras 4 cols de feature_cols.json
+  nq: 4                            # forzado = n_features
+  layers: [1, 2, 3]
+  encoding: [angle, zz]
+  datasets: [Golden, Golden_PCA]   # Golden = sin PCA, Golden_PCA = con PCA
+  seed: 42
+  results_dir: data/results/pendiente3
+
+# ══════════════════════════════════════════════════════
+# PENDIENTE 4 — Optimización con N filas (COBYLA)
+# ══════════════════════════════════════════════════════
+pendiente4:
+  nq: 4
+  layers: 1
+  encoding: angle
+  N_rows: [10, 25, 50, 100, 200]   # barrido de tamaño de subconjunto
+  optimizer: COBYLA
+  max_iter: 100
+  seed: 42
+  results_dir: data/results/pendiente4
+
+  # ══════════════════════════════════════════════════════════════════════════════
+# REFERENCIAS EXPERIMENTALES (Auger)
+# ══════════════════════════════════════════════════════════════════════════════
+# Usadas en phase5 para comparar predicciones del modelo con datos publicados.
+references:
+
+  PRD_111:
+    # PRD 111, 022003 (2025) — Deep learning for Xmax estimation at Auger
+    logE:        [18.55, 18.65, 18.75, 18.85, 18.95,
+                  19.05, 19.15, 19.25, 19.35, 19.45,
+                  19.55, 19.64, 19.74, 19.85, 20.00]
+    xmax:        [757.0, 758.8, 759.5, 761.8, 765.7,
+                  770.0, 769.9, 774.0, 774.7, 775.3,
+                  778.6, 783.2, 787.2, 794.5, 793.9]
+    xmax_stat:   [0.5, 0.5, 0.5, 0.5, 0.5,
+                  0.6, 0.6, 0.8, 0.95, 1.0,
+                  1.3, 1.4, 2.0, 3.6, 4.5]
+    xmax_syst:   [7.7, 3.0, 7.9, 8.0, 8.5,
+                  9.0, 7.0, 7.5, 0.0, 10.0,
+                  19.5, 11.0, 11.6, 12.2, 13.1]
+    sigma:       [48.8, 43.4, 39.7, 38.4, 46.3,
+                  38.8, 34.0, 33.2, 30.7, 27.3,
+                  26.3, 24.2, 20.7, 25.1, 21.8]
+    sigma_stat:  [0.6, 0.7, 0.6, 0.7, 0.6,
+                  1.0, 0.8, 0.9, 1.26, 1.6,
+                  1.3, 1.8, 1.4, 3.9, 5.4]
+
+  PRD_114:
+    # PRD 114, 0443016 (2026) — Tabla V (datos completos)
+    logE_full:   [17.75, 17.85, 17.95, 18.05, 18.15,
+                  18.25, 18.35, 18.45, 18.55, 18.65,
+                  18.75, 18.85, 18.95, 19.05, 19.15,
+                  19.25, 19.35, 19.44, 19.55, 19.71]
+    xmax_full:   [703.1, 711.5, 719.3, 728.7, 737.9,
+                  743.9, 750.4, 757.3, 758.9, 764.4,
+                  762.2, 766.2, 770.0, 774.8, 773.7,
+                  780.7, 780.8, 780.2, 791.9, 784.6]
+    err_full:    [0.7, 0.8, 0.8, 1.0, 1.0,
+                  1.1, 1.1, 1.4, 1.4, 1.8,
+                  1.6, 1.9, 2.0, 2.2, 2.1,
+                  3.4, 3.1, 4.3, 5.1, 4.2]
+    # Filtro automático: en phase5 se aplica mask logE >= 18.0
+
+  PRD_90:
+    # PRD 90, 122005 (2014) — referencia histórica
+    logE:        [17.85, 17.95, 18.05, 18.15, 18.25,
+                  18.35, 18.45, 18.55, 18.65, 18.75,
+                  18.85, 18.95, 19.05, 19.14, 19.25,
+                  19.34, 19.45, 19.62]
+    xmax:        [709.9, 719.9, 725.2, 736.9, 744.5,
+                  748.0, 752.2, 754.5, 756.1, 757.4,
+                  763.6, 764.6, 766.4, 767.0, 779.5,
+                  773.1, 787.9, 779.8]
+    xmax_stat:   [1.2, 1.4, 1.5, 1.8, 2.0,
+                  2.0, 2.1, 2.2, 2.7, 2.8,
+                  2.9, 3.2, 3.3, 3.6, 5.1,
+                  5.0, 9.6, 5.0]
+    sigma:       [59.6, 62.4, 59.5, 64.3, 66.4,
+                  60.2, 53.3, 53.5, 54.5, 45.8,
+                  42.8, 43.4, 39.0, 36.7, 46.4,
+                  40.1, 53.2, 26.5]
+    sigma_stat:  [1.7, 2.1, 2.0, 2.6, 2.6,
+                  2.8, 2.9, 3.0, 3.5, 3.4,
+                  3.6, 4.1, 3.8, 3.6, 6.2,
+                  4.8, 12.7, 4.8]
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# MODELOS HADRÓNICOS
+# ══════════════════════════════════════════════════════════════════════════════
+# Función de Rails: Xmax(lgE) = a + b·(lgE − 18) + c·(lgE − 18)²
+# Valores de <Xmax> para protones (H) y hierro (Fe).
+# Fuente: EPOS-LHC, Sibyll2.3c, QGSJetII-04 (compilación Auger)
+hadronic_models:
+
+  EPOS-LHC:
+    H:  {a: 748.78, b: 57.73, c: -0.85}
+    Fe: {a: 648.60, b: 63.12, c: -1.97}
+    color:      "red"
+    linestyle:  "-"
+
+  Sibyll2.3c:
+    H:  {a: 761.90, b: 57.40, c: -8.07e-10}
+    Fe: {a: 656.60, b: 60.10, c: -1.60e-04}
+    color:      "red"
+    linestyle:  "--"
+
+  QGSJetII-04:
+    H:  {a: 733.34, b: 54.05, c: -0.16}
+    Fe: {a: 635.93, b: 59.70, c: -1.98}
+    color:      "red"
+    linestyle:  "-."
+
+  # Colores para hierro (mismo modelo, distinto estilo)
+  Fe_color:    "blue"
+  Fe_linestyle: "-"
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CALIBRACIÓN (offsets empíricos)
+# ══════════════════════════════════════════════════════════════════════════════
+# Offsets aplicados a las predicciones para alinear con FD-Auger.
+# Distintos valores según el dataset de validación usado.
+calibration:
+
+  # Dataset: datos_pca_cuanticos_backup (SDnewversion.csv)
+  offset_general:  6.32536   # g/cm² — calibración original
+  offset_pca:      4.05      # g/cm² — calibración con PCA + GPS
+
+  # Dataset: baseO_filtrado_final.csv (Andrea/todosSD.root)
+  offset_baseO:    4.05      # g/cm² — calibración validada con asesor
+
+  # Corrección del target (aplicada en phase0)
+  target_correction: 6.32536
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# LOTES DE ENERGÍA (para análisis por bins)
+# ══════════════════════════════════════════════════════════════════════════════
+# Rangos consistentes con el pipeline original datos_pca_cuanticos_backup.
+energy_bins:
+
+  bajo:
+    lim_inf: 18.0
+    lim_sup: 18.8
+    color:   "blue"
+    label:   "Bajo (18.0–18.8)"
+
+  medio:
+    lim_inf: 18.8
+    lim_sup: 19.2
+    color:   "green"
+    label:   "Medio (18.8–19.2)"
+
+  alto:
+    lim_inf: 19.2
+    lim_sup: 20.0
+    color:   "red"
+    label:   "Alto (19.2–20.0)"
+
+  todo:
+    lim_inf: 18.0
+    lim_sup: 20.0
+    color:   "gray"
+    label:   "Todo (18.0–20.0)"
+
+# Bins finos (0.1 dex) para gráficas de segundo momento
+fine_bins:
+  start: 18.5
+  stop:  20.05
+  step:  0.1
+  min_events_per_bin: 5
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ESTILOS DE GRÁFICAS
+# ══════════════════════════════════════════════════════════════════════════════
+# Consistencia visual entre todas las gráficas del pipeline.
+plot_styles:
+
+  # Configuraciones del proyecto (12 combos)
+  configs:
+    Original:                        {marker: 'o', color: 'tab:blue',   ls: '-'}
+    Original_GPS_Quantum:            {marker: 's', color: 'tab:cyan',   ls: '--'}
+    Original_Cuanticas:              {marker: '^', color: 'tab:green',  ls: '-'}
+    Original_Cuanticas_GPS_Quantum:  {marker: 'D', color: 'tab:olive',  ls: '--'}
+    Top30:                           {marker: 'o', color: 'tab:red',    ls: '-'}
+    Top30_GPS_Quantum:               {marker: 's', color: 'tab:orange', ls: '--'}
+    Top30_Cuanticas:                 {marker: '^', color: 'tab:pink',   ls: '-'}
+    Top30_Cuanticas_GPS_Quantum:     {marker: 'D', color: 'tab:brown',  ls: '--'}
+    PCA:                             {marker: 'o', color: 'tab:purple', ls: '-'}
+    PCA_GPS_Quantum:                 {marker: 's', color: 'tab:gray',   ls: '--'}
+    PCA_Cuanticas:                   {marker: '^', color: 'navy',       ls: '-'}
+    PCA_Cuanticas_GPS_Quantum:       {marker: 'D', color: 'darkgreen',  ls: '--'}
+
+  # Referencias experimentales
+  references:
+    PRD_111:  {marker: 'D', color: 'cyan',   alpha: 0.4, zorder: 5}
+    PRD_114:  {marker: 'd', color: 'purple', alpha: 0.4, zorder: 4}
+    PRD_90:   {marker: 's', color: 'steelblue', alpha: 0.7, zorder: 3}
+
+  # Estilo global matplotlib
+  matplotlib:
+    font_family:    "serif"
+    font_size:      12
+    figure_dpi:     150
+    axes_grid:      true
+    grid_alpha:     0.3
+    axes_linewidth: 1.2
+    tick_direction: "in"

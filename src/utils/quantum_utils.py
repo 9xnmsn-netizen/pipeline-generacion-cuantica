@@ -24,7 +24,7 @@ import pennylane as qml
 from typing import Callable
 from src.utils.log_utils import get_logger
 
-log = get_logger("quantum_utils")
+log = get_logger("quantum_utils") # Ver de nuevo get_logger() en log_utils.py para entender qué hace y cómo se usa. Hacer un ejemplo de logging con diferentes niveles: DEBUG, INFO, WARNING, ERROR, CRITICAL.
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ENCODING
@@ -36,12 +36,12 @@ def angle_encoding(x: np.ndarray, nq: int) -> None:
 
     Parameters
     ----------
-    x  : array 1D de longitud n_features (ya normalizado en [-π, π])
+    x  : array 1D de longitud n_features (ya normalizado en [-π, π]) # ¿Por qué usar 1D array? Hacer un ejemplo de np.ndarray 1D y 2D.
     nq : número de qubits
     """
     n = len(x)
     for i in range(nq):
-        qml.RY(float(x[i % n]), wires=i)
+        qml.RY(float(x[i % n]), wires=i) # ¿Qué hace % en Python? Hacer un ejemplo de operador módulo % con enteros y flotantes.
 
 
 def zz_encoding(x: np.ndarray, nq: int) -> None:
@@ -49,7 +49,7 @@ def zz_encoding(x: np.ndarray, nq: int) -> None:
     Codificación ZZ Feature Map (Havlíček et al. 2019).
 
     Capa 1 : H en todos los qubits + RZ(2·x_i)
-    Capa 2 : CNOT(i, i+1) + RZ(2·(π-x_i)·(π-x_{i+1})) + CNOT(i, i+1)
+    Capa 2 : CNOT(i, i+1) + RZ(2·(π-x_i)·(π-x_{i+1})) + CNOT(i, i+1) # ¿De dónde vienen las fórmulas de codificación ZZ? Investigar el paper de Havlíček et al. 2019 y hacer un resumen.
 
     Parameters
     ----------
@@ -63,7 +63,7 @@ def zz_encoding(x: np.ndarray, nq: int) -> None:
         qml.RZ(2.0 * float(x[i % n]), wires=i)
     # Capa 2 — interacciones ZZ entre pares adyacentes
     for i in range(nq - 1):
-        xi = float(x[i % n])
+        xi = float(x[i % n]) # ¿Qué son xi y xj? Hacer un ejemplo de cómo acceder a elementos de un array 1D en Python usando índices y el operador módulo %.
         xj = float(x[(i + 1) % n])
         qml.CNOT(wires=[i, i + 1])
         qml.RZ(2.0 * (np.pi - xi) * (np.pi - xj), wires=i + 1)
@@ -80,7 +80,7 @@ def variational_layer(theta: np.ndarray, nq: int, layer: int) -> None:
 
     Parameters
     ----------
-    theta : array shape (L, nq, 2)
+    theta : array shape (L, nq, 2) # ¿Por qué tiene forma theta (L, nq, 2)? Hacer un ejemplo de np.ndarray con forma (L, nq, 2) y cómo acceder a sus elementos.
             theta[layer, i, 0] → ángulo RZ del qubit i
             theta[layer, i, 1] → ángulo RY del qubit i
     nq    : número de qubits
@@ -100,15 +100,15 @@ def variational_layer(theta: np.ndarray, nq: int, layer: int) -> None:
 
 def init_theta(L: int, nq: int, seed: int = 42) -> np.ndarray:
     """
-    Inicializa parámetros variacionales θ ~ U(0, 2π).
+    Inicializa parámetros variacionales θ ~ U(0, 2π). $ ¿Qué es U(0, 2π)? Hacer un ejemplo de distribución uniforme U(a, b) en Python con numpy.random.uniform().
 
     Returns
     -------
     theta : np.ndarray shape (L, nq, 2) float32
             dim 2: [RZ_angle, RY_angle]
     """
-    rng   = np.random.default_rng(seed)
-    theta = rng.uniform(0.0, 2.0 * np.pi, size=(L, nq, 2))
+    rng   = np.random.default_rng(seed) # ¿Qué hace np.random.default_rng()? Hacer un ejemplo de cómo usar np.random.default_rng() para generar números aleatorios.
+    theta = rng.uniform(0.0, 2.0 * np.pi, size=(L, nq, 2)) # ¿Qué es .uniform() en numpy? Hacer un ejemplo de numpy.random.default_rng().uniform() para generar números aleatorios uniformes.
     return theta.astype(np.float32)
 
 
@@ -145,7 +145,8 @@ def build_circuit(nq: int, L: int, enc: str) -> Callable:
             f"encoding='{enc}' no válido. Opciones: 'angle', 'zz'."
         )
 
-    _enc_fn = angle_encoding if enc == "angle" else zz_encoding
+    _enc_fn = angle_encoding if enc == "angle" else zz_encoding # ¿Qué forma de programación es esta? Hacer un ejemplo de asignación condicional en Python con if-else.
+    # ¿Qué forma tiene _enc_fn? Hacer un ejemplo de función como objeto en Python y cómo llamarla.
     dev     = qml.device("default.qubit", wires=nq)
 
     @qml.qnode(dev, interface="autograd")
@@ -153,7 +154,7 @@ def build_circuit(nq: int, L: int, enc: str) -> Callable:
         _enc_fn(x, nq)
         for l in range(L):
             variational_layer(theta, nq, l)
-        return [qml.expval(qml.PauliZ(i)) for i in range(nq)]
+        return [qml.expval(qml.PauliZ(i)) for i in range(nq)] # ¿Qué hace qml.expval() en PennyLane? Hacer un ejemplo de qml.expval() y qml.PauliZ() para medir la expectativa de Z en un qubit.
 
     log.info(
         f"Circuito construido: nq={nq}, L={L}, enc={enc} | "
@@ -171,7 +172,7 @@ def get_qfeatures(
     circuit   : Callable,
     theta     : np.ndarray,
     batch_size: int  = 64,
-    verbose   : bool = True,
+    verbose   : bool = True, # ¿Qué hace verbose en Python? Hacer un ejemplo de función con argumento verbose y cómo usarlo para mostrar información opcionalmente.
 ) -> np.ndarray:
     """
     Aplica el circuito cuántico a todas las muestras de X.
@@ -197,13 +198,14 @@ def get_qfeatures(
     """
     n_samples = X.shape[0]
     nq        = theta.shape[1]
-    features  = np.zeros((n_samples, nq), dtype=np.float32)
+    features  = np.zeros((n_samples, nq), dtype=np.float32) # No estoy seguro si necesito np.zeros ¿Qué hace np.zeros() en numpy? Hacer un ejemplo de np.zeros() para crear un array de ceros con forma específica.
+    # ¿Qué hace np.zeros() en numpy? Hacer un ejemplo de np.zeros() para crear un array de ceros con forma específica.
 
     for i in range(n_samples):
         result      = circuit(X[i], theta)
         features[i] = np.array(result, dtype=np.float32)
 
-        if verbose and (i + 1) % batch_size == 0:
+        if verbose and (i + 1) % batch_size == 0: # ¿Qué significa la condición (i + 1) % batch_size == 0? Hacer un ejemplo de operador módulo % en Python para determinar si un número es múltiplo de otro.
             pct = 100.0 * (i + 1) / n_samples
             log.info(
                 f"  Progreso: {i+1:>6d}/{n_samples} "
@@ -233,7 +235,7 @@ def circuit_summary(nq: int, L: int, enc: str) -> dict:
     """
     # CNOT en anillo: nq gates por capa variacional
     # ZZ encoding: nq-1 pares adicionales
-    n_cnots_var = nq                    # anillo variacional
+    n_cnots_var = nq                    # anillo variacional ¿Por qué anillo variacional? Hacer un ejemplo de circuito cuántico con CNOT en anillo y explicar su propósito.
     n_cnots_enc = (nq - 1) if enc == "zz" else 0
     return {
         "n_qubits"         : nq,

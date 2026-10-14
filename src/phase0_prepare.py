@@ -5,6 +5,9 @@ Cambios respecto a la versión anterior:
   ✅ Lee claves desde cfg["phase0"] (compatible con config.yaml corregido)
   ✅ Guarda feature_cols.json (necesario para phase4)
   ✅ Guarda fd_real.npz con logE y xmax del conjunto completo (para phase5)
+  ✅ X contiene SOLO columnas SD + log10(SD_RS_fEnergy)
+  ✅ Corrección al target ELIMINADA de esta fase (se aplica solo al graficar)
+  ✅ Bloque include_logE ELIMINADO (innecesario)
 """
 
 import sys
@@ -43,6 +46,10 @@ def load_raw_data(cfg: dict) -> pd.DataFrame:
     paths    = get_paths(cfg)
     merge_on = p0.get("merge_on", "index")
 
+    target_col    = p0.get("target_col", cfg.get("target_col", "FD_RS_fXmax"))
+    energy_col    = p0.get("energy_col", cfg.get("energy_col", "FD_RS_logE"))
+    fd_cols_keep  = p0.get("fd_cols_keep", [target_col, energy_col])
+
     fd_path = Path(p0["fd_file"])
     sd_path = Path(p0["sd_file"])
 
@@ -51,8 +58,8 @@ def load_raw_data(cfg: dict) -> pd.DataFrame:
     if not sd_path.exists():
         raise FileNotFoundError(f"No se encontró SD: {sd_path}")
 
-    df_fd = pd.read_csv(fd_path, sep="\t")
-    df_sd = pd.read_csv(sd_path, sep="\t")
+    df_fd = _read_csv_auto(fd_path)
+    df_sd = _read_csv_auto(sd_path)
     log.info(f"FD: {df_fd.shape} | SD: {df_sd.shape}")
 
     if merge_on == "index":
@@ -68,14 +75,22 @@ def load_raw_data(cfg: dict) -> pd.DataFrame:
             log.warning(f"Columnas duplicadas eliminadas de SD: {dup}")
             df_sd = df_sd.drop(columns=list(dup))
 
-        df = pd.concat([df_fd, df_sd], axis=1)
+        fd_cols_present = [c for c in fd_cols_keep if c in df_fd.columns]
+        missing_fd = [c for c in fd_cols_keep if c not in df_fd.columns]
+        if missing_fd:
+            log.warning(f"Columnas de FD no encontradas y se omiten: {missing_fd}")
+        df_fd = df_fd[fd_cols_present]
+
+        df = pd.concat([df_sd, df_fd], axis=1)
     else:
-        df = pd.merge(df_fd, df_sd, on=merge_on, how="inner")
+        df = pd.merge(df_sd, df_fd, on=merge_on, how="inner")
 
     if df.empty:
         raise ValueError("El DataFrame fusionado está vacío.")
 
     log.info(f"DataFrame fusionado: {df.shape}")
+    print(df.columns.tolist())
+
     return df
 
 
@@ -84,29 +99,42 @@ def load_raw_data(cfg: dict) -> pd.DataFrame:
 # ══════════════════════════════════════════════════════════════════════════════
 
 def filter_by_energy(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
-    p0         = cfg["phase0"]
+    p0 = cfg["phase0"]
     energy_col = p0["energy_col"]
-    E_min      = 10 **float(p0["E_min"]) # convierte 18.5 → 10^18.5 eV
-    E_max      = 10 **float(p0["E_max"]) # convierte 20.0 → 10^20.0 eV
+    E_min = 10 ** float(p0["E_min"])
+    E_max = 10 ** float(p0["E_max"])
 
     if energy_col not in df.columns:
         raise KeyError(
-            f"Columna de energía '{energy_col}' no encontrada. "
-            f"Disponibles: {list(df.columns)}"
+            f"Columna de energía '{energy_col}' no encontrada.\n"
+            f"Columnas disponibles: {list(df.columns)}"
         )
+
+    # ── DIAGNÓSTICO ──────────────────────────────────────────────────
+    col_vals = df[energy_col].dropna()
+    print(f"\n>>> Columna energía: {energy_col}")
+    print(f">>> Rango en datos : [{col_vals.min():.3e}, {col_vals.max():.3e}]")
+    print(f">>> Filtro aplicado: [{E_min:.3e}, {E_max:.3e}]")
+    print(f">>> NaN en columna : {df[energy_col].isna().sum()}")
+    # ─────────────────────────────────────────────────────────────────
 
     mask = (df[energy_col] >= E_min) & (df[energy_col] <= E_max)
     df_f = df[mask].reset_index(drop=True)
-    log.info(
-        f"Filtro energía [{E_min}, {E_max}] en '{energy_col}': "
-        f"{mask.sum()} / {len(df)} filas"
-    )
+
+    print(f">>> Filas tras filtro: {len(df_f)} / {len(df)}")
+
     if df_f.empty:
         raise ValueError(
-            f"Filtro de energía dejó 0 filas. "
-            f"Rango en datos: [{df[energy_col].min():.3f}, "
-            f"{df[energy_col].max():.3f}]"
+            f"Filtro de energía dejó 0 filas.\n"
+            f"Rango en datos: [{col_vals.min():.3e}, {col_vals.max():.3e}]\n"
+            f"Rango en config (E_min/E_max): [{E_min:.3e}, {E_max:.3e}]\n"
+            f"Verifica las unidades: ¿eV o log10(eV/eV)?"
         )
+
+    log.info(
+        f"Filtro energía [{E_min:.3e}, {E_max:.3e}] en '{energy_col}': "
+        f"{mask.sum()} / {len(df)} filas"
+    )
     return df_f
 
 
@@ -118,16 +146,18 @@ def extract_features_target(
     df: pd.DataFrame,
     cfg: dict,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[str]]:
-    p0         = cfg["phase0"]
+
+    p0 = cfg["phase0"]
     target_col = p0["target_col"]
     energy_col = p0["energy_col"]
-    correction = p0.get("target_correction", None)
-    exclude    = set(p0.get("exclude_cols", []))
+    exclude = set(p0.get("exclude_cols", []))
 
     if target_col not in df.columns:
-        raise KeyError(f"Target '{target_col}' no encontrado en el DataFrame.")
+        raise KeyError(
+            f"Target '{target_col}' no encontrado.\n"
+            f"Columnas disponibles: {list(df.columns)}"
+        )
 
-    # Selección de features
     feature_cols = p0.get("feature_cols", [])
     if feature_cols:
         missing = [c for c in feature_cols if c not in df.columns]
@@ -145,34 +175,48 @@ def extract_features_target(
     if not feature_cols:
         raise ValueError("No se encontraron columnas de features.")
 
-    X    = df[feature_cols].values.astype(np.float32)
-    y_raw = df[target_col].values.astype(np.float32)
-    logE  = df[energy_col].values.astype(np.float32)
+    # ── Construir X ────────────────────────────────────────────────────
+    X_sd = df[feature_cols].values.astype(np.float32)
+    logE_raw = df[energy_col].values.astype(np.float32)
+    logE_feat = np.log10(logE_raw).reshape(-1, 1).astype(np.float32)
+    X = np.hstack([X_sd, logE_feat])
+    feature_cols = feature_cols + [f"log10_{energy_col}"]
 
-    # Corrección al target
-    y = y_raw + float(correction) if correction is not None else y_raw.copy()
-    if correction is not None:
-        log.info(f"Corrección al target: +{correction}")
+    print(f"\n>>> X construida: {X.shape} | "
+          f"features SD: {X_sd.shape[1]} | +1 log10(E)")
 
-    # Imputar NaN en features
+    # ── Imputar NaN en features (vectorizado) ──────────────────────────
     nan_X = np.isnan(X).sum()
     if nan_X > 0:
+        nan_por_col = np.isnan(X).sum(axis=0)
+        cols_con_nan = [(feature_cols[i], int(nan_por_col[i]))
+                        for i in range(len(feature_cols))
+                        if nan_por_col[i] > 0]
+        print(f"\n>>> NaN por columna ({nan_X} total):")
+        for col_name, n_nan in cols_con_nan:
+            print(f"    {col_name}: {n_nan} NaN")
+
         log.warning(f"NaN en features: {nan_X} → imputando con mediana")
         medians = np.nanmedian(X, axis=0)
-        idx     = np.where(np.isnan(X))
-        X[idx]  = np.take(medians, idx[1])
+        nan_mask = np.isnan(X)
+        X = np.where(nan_mask, medians[np.newaxis, :], X)   # ✅ vectorizado
+        print(f">>> Imputación OK. NaN restantes: {np.isnan(X).sum()}")
 
-    # Eliminar filas con NaN en target o energía
+    # ── Target ─────────────────────────────────────────────────────────
+    y = df[target_col].values.astype(np.float32)
+    logE = logE_raw.copy()
+
+    # ── Eliminar filas con NaN en y o logE ────────────────────────────
     mask = ~(np.isnan(y) | np.isnan(logE))
     if (~mask).sum() > 0:
         log.warning(f"Eliminando {(~mask).sum()} filas con NaN en y o logE")
-    X, y, logE = X[mask], y[mask], logE[mask]
+        X, y, logE = X[mask], y[mask], logE[mask]
 
-    log.info(
-        f"X: {X.shape} | "
-        f"y: [{y.min():.1f}, {y.max():.1f}] | "
-        f"logE: [{logE.min():.2f}, {logE.max():.2f}]"
-    )
+    print(f"\n>>> Final → X: {X.shape} | "
+          f"y: [{y.min():.1f}, {y.max():.1f}] g/cm² | "
+          f"logE: [{np.log10(logE.min()):.2f}, {np.log10(logE.max()):.2f}]")
+
+    log.info(f"Resultado final → X: {X.shape}")
     return X, y, logE, feature_cols
 
 
@@ -193,6 +237,7 @@ def split_data(
     f_val   = float(splits["val"])
     f_test  = float(splits["test"])
 
+    # Fracción relativa de val dentro de (train + val)
     f_val_rel = f_val / (f_train + f_val)
 
     X_tv, X_test, y_tv, y_test, logE_tv, logE_test = train_test_split(
@@ -222,6 +267,24 @@ def run(cfg: dict) -> None:
     log.info("=" * 60)
     log.info("FASE 0 — Preparación del dataset")
     log.info("=" * 60)
+    
+    # ── DIAGNÓSTICO RÁPIDO ────────────────────────────────────────────
+    from src.utils.config_utils import load_config, get_paths
+    p0 = cfg["phase0"]
+    import pandas as pd, numpy as np
+    sd_path = Path(p0["sd_file"])
+    df_sd_check = pd.read_csv(sd_path, nrows=5)
+    energy_col = p0["energy_col"]
+    print(f"\n>>> energy_col en config: {energy_col}")
+    if energy_col in df_sd_check.columns:
+        print(f">>> Primeros valores de {energy_col}:")
+        print(df_sd_check[energy_col].values)
+    else:
+        print(f">>> ⚠️  {energy_col} NO está en SD")
+    print()
+    # ── FIN DIAGNÓSTICO ───────────────────────────────────────────────
+
+    paths = get_paths(cfg)
 
     paths    = get_paths(cfg)
     proc_dir = paths["processed_dir"]
@@ -246,7 +309,7 @@ def run(cfg: dict) -> None:
     save_npz(
         proc_dir / "fd_real.npz",
         logE = logE.astype(np.float32),
-        xmax = y.astype(np.float32),    # y ya tiene la corrección aplicada
+        xmax = y.astype(np.float32),    # ✅ SIN corrección
     )
     log.info(f"fd_real.npz guardado: {len(logE)} eventos")
 

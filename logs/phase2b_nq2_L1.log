@@ -194,3 +194,64 @@ Combinación: nq=6, L=1, enc=zz
 [2026-07-31 10:50:08] [phase2b     ] INFO        Iteración  10 | MSE = 2704.1724
 [2026-07-31 11:30:35] [phase2b     ] INFO        Iteración  20 | MSE = 2640.5493
 [2026-07-31 12:16:19] [phase2b     ] INFO        Iteración  30 | MSE = 2630.6953
+[2026-07-31 13:02:02] [phase2b     ] INFO        Iteración  40 | MSE = 2629.2659
+[2026-07-31 13:34:17] [phase2b     ] INFO        Iteración  50 | MSE = 2627.6536
+[2026-07-31 14:03:51] [phase2b     ] INFO        Iteración  60 | MSE = 2625.7903
+[2026-07-31 14:17:17] [phase2b     ] INFO     Optimización completada: MSE_final = 2625.1143
+[2026-07-31 14:17:17] [phase2b     ] INFO     Convergió: False | Mensaje: Return from COBYLA because the objective function has been evaluated MAXFUN times.
+[2026-07-31 14:17:18] [phase2b     ] INFO     θ optimizado guardado en: qfeatures_6q_1l_zz.npz
+[2026-07-31 14:17:18] [phase2b     ] INFO     
+Combinación: nq=6, L=2, enc=angle
+[2026-07-31 14:17:18] [quantum_utils] INFO     Circuito construido: nq=6, L=2, enc=angle | parámetros θ: 24
+[2026-07-31 14:17:18] [phase2b     ] INFO     Optimizando θ con COBYLA: nq=6, L=2, enc=angle
+[2026-07-31 14:17:18] [phase2b     ] INFO     Parámetros a optimizar: 24
+[2026-07-31 16:07:45] [phase2b     ] INFO        Iteración  10 | MSE = 2648.0198
+[2026-07-31 17:00:17] [phase2b     ] INFO        Iteración  20 | MSE = 2630.1619
+[2026-07-31 17:52:49] [phase2b     ] INFO        Iteración  30 | MSE = 2614.2510
+[2026-07-31 18:34:51] [phase2b     ] INFO        Iteración  40 | MSE = 2603.7708
+[2026-07-31 18:50:36] [phase2b     ] INFO     Optimización completada: MSE_final = 2596.3699
+[2026-07-31 18:50:36] [phase2b     ] INFO     Convergió: False | Mensaje: Return from COBYLA because the objective function has been evaluated MAXFUN times.
+[2026-07-31 18:50:36] [phase2b     ] INFO     θ optimizado guardado en: qfeatures_6q_2l_angle.npz
+[2026-07-31 18:50:36] [phase2b     ] INFO     
+Combinación: nq=6, L=2, enc=zz
+[2026-07-31 18:50:36] [quantum_utils] INFO     Circuito construido: nq=6, L=2, enc=zz | parámetros θ: 24
+[2026-07-31 18:50:36] [phase2b     ] INFO     Optimizando θ con COBYLA: nq=6, L=2, enc=zz
+[2026-07-31 18:50:36] [phase2b     ] INFO     Parámetros a optimizar: 24
+[2026-07-31 21:19:28] [phase2b     ] INFO        Iteración  10 | MSE = 2903.8054
+[2026-07-31 22:12:36] [phase2b     ] INFO        Iteración  20 | MSE = 2657.9038
+[2026-07-31 23:23:26] [phase2b     ] INFO        Iteración  30 | MSE = 2626.7903
+[2026-08-01 00:23:39] [phase2b     ] INFO        Iteración  40 | MSE = 2621.9839
+[2026-08-01 00:59:04] [phase2b     ] INFO     Optimización completada: MSE_final = 2619.2419
+[2026-08-01 00:59:04] [phase2b     ] INFO     Convergió: False | Mensaje: Return from COBYLA because the objective function has been evaluated MAXFUN times.
+[2026-08-01 00:59:04] [phase2b     ] INFO     θ optimizado guardado en: qfeatures_6q_2l_zz.npz
+[2026-08-01 00:59:04] [phase2b     ] INFO     
+Combinación: nq=6, L=3, enc=angle
+[2026-08-01 00:59:04] [quantum_utils] INFO     Circuito construido: nq=6, L=3, enc=angle | parámetros θ: 36
+[2026-08-01 00:59:04] [phase2b     ] INFO     Optimizando θ con COBYLA: nq=6, L=3, enc=angle
+[2026-08-01 00:59:04] [phase2b     ] INFO     Parámetros a optimizar: 36
+[2026-08-01 04:17:28] [phase2b     ] INFO        Iteración  10 | MSE = 2665.1436
+[2026-08-01 05:27:01] [phase2b     ] INFO        Iteración  20 | MSE = 2661.9668
+[2026-08-01 06:19:09] [phase2b     ] INFO        Iteración  30 | MSE = 2642.0010
+[2026-08-01 06:57:24] [phase2b     ] INFO     Optimización completada: MSE_final = 2624.3882
+[2026-08-01 06:57:24] [phase2b     ] INFO     Convergió: False | Mensaje: Return from COBYLA because the objective function has been evaluated MAXFUN times.
+[2026-08-01 06:57:24] [phase2b     ] INFO     θ optimizado guardado en: qfeatures_6q_3l_angle.npz
+[2026-08-01 06:57:24] [phase2b     ] INFO     
+Combinación: nq=6, L=3, enc=zz
+[2026-08-01 06:57:24] [quantum_utils] INFO     Circuito construido: nq=6, L=3, enc=zz | parámetros θ: 36
+[2026-08-01 06:57:24] [phase2b     ] INFO     Optimizando θ con COBYLA: nq=6, L=3, enc=zz
+[2026-08-01 06:57:24] [phase2b     ] INFO     Parámetros a optimizar: 36
+[2026-08-01 11:03:00] [phase2b     ] INFO        Iteración  10 | MSE = 3287.9812
+[2026-08-01 12:30:40] [phase2b     ] INFO        Iteración  20 | MSE = 3226.6499
+[2026-08-01 13:53:56] [phase2b     ] INFO        Iteración  30 | MSE = 3203.4355
+[2026-08-01 14:29:01] [phase2b     ] INFO     Optimización completada: MSE_final = 3174.0393
+[2026-08-01 14:29:01] [phase2b     ] INFO     Convergió: False | Mensaje: Return from COBYLA because the objective function has been evaluated MAXFUN times.
+[2026-08-01 14:29:01] [phase2b     ] INFO     θ optimizado guardado en: qfeatures_6q_3l_zz.npz
+[2026-08-01 14:29:01] [phase2b     ] INFO     
+FASE 2b completada ✓
+[2026-08-01 14:29:01] [pipeline    ] INFO       ✅ Fase 2b completada en 233756.1s
+[2026-08-01 14:29:01] [pipeline    ] INFO     ======================================================================
+[2026-08-01 14:29:01] [pipeline    ] INFO     RESUMEN FINAL
+[2026-08-01 14:29:01] [pipeline    ] INFO     ======================================================================
+[2026-08-01 14:29:01] [pipeline    ] INFO       Fase 2b: ✅ OK
+[2026-08-01 14:29:01] [pipeline    ] INFO       Tiempo total: 233756.1s
+[2026-08-01 14:29:01] [pipeline    ] INFO     ======================================================================

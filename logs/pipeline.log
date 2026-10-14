@@ -329,3 +329,818 @@
 [2026-07-30 19:22:17] [pipeline    ] INFO       Fase 5: ✅ OK
 [2026-07-30 19:22:17] [pipeline    ] INFO       Tiempo total: 32.0s
 [2026-07-30 19:22:17] [pipeline    ] INFO     ======================================================================
+[2026-08-01 14:29:01] [pipeline    ] INFO       ✅ Fase 2b completada en 233756.1s
+[2026-08-01 14:29:01] [pipeline    ] INFO     ======================================================================
+[2026-08-01 14:29:01] [pipeline    ] INFO     RESUMEN FINAL
+[2026-08-01 14:29:01] [pipeline    ] INFO     ======================================================================
+[2026-08-01 14:29:01] [pipeline    ] INFO       Fase 2b: ✅ OK
+[2026-08-01 14:29:01] [pipeline    ] INFO       Tiempo total: 233756.1s
+[2026-08-01 14:29:01] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO     FASES DISPONIBLES
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO     
+  Pipeline principal:
+[2026-10-13 14:31:51] [pipeline    ] INFO           0 | Preparación y validación del dataset
+[2026-10-13 14:31:51] [pipeline    ] INFO           1 | Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-13 14:31:51] [pipeline    ] INFO           2 | Generación de features cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO          2b | Optimización variacional (COBYLA+MSE)
+[2026-10-13 14:31:51] [pipeline    ] INFO           3 | Entrenamiento XGBoost (barrido)
+[2026-10-13 14:31:51] [pipeline    ] INFO          3b | Optimización profunda XGBoost (mejor modelo)
+[2026-10-13 14:31:51] [pipeline    ] INFO           4 | Predicción sobre datos nuevos
+[2026-10-13 14:31:51] [pipeline    ] INFO           5 | Análisis y visualizaciones (Xmax + σ)
+[2026-10-13 14:31:51] [pipeline    ] INFO           6 | P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO           7 | P4 — Optimización con N filas (COBYLA)
+[2026-10-13 14:31:51] [pipeline    ] INFO     
+  Análisis post-entrenamiento:
+[2026-10-13 14:31:51] [pipeline    ] INFO          A1 | Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO          A2 | Búsqueda de learning rate óptimo
+[2026-10-13 14:31:51] [pipeline    ] INFO          A3 | Comparación con papers (PRD 111 / PRD 90)
+[2026-10-13 14:31:51] [pipeline    ] INFO          A4 | Diagnóstico rápido de predicciones
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   0: Preparación y validación del dataset
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   2: Generación de features cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  2b: Optimización variacional (COBYLA+MSE)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 0: Preparación y validación del dataset
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase0_prepare.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase1_reduce.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 2: Generación de features cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2_quantum_features.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 2b: Optimización variacional (COBYLA+MSE)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2b_optimize.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   0 | Preparación y validación del dataset          | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   1 | Reducción de dimensionalidad (PCA/UMAP)       | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   2 | Generación de features cuánticas              | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  2b | Optimización variacional (COBYLA+MSE)         | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-13 14:31:51] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-13 14:31:51] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-13 14:31:51] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:52] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:52] [pipeline    ] INFO     FASES DISPONIBLES
+[2026-10-14 13:19:52] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:52] [pipeline    ] INFO     
+  Pipeline principal:
+[2026-10-14 13:19:52] [pipeline    ] INFO           0 | Preparación y validación del dataset
+[2026-10-14 13:19:52] [pipeline    ] INFO           1 | Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:19:52] [pipeline    ] INFO           2 | Generación de features cuánticas
+[2026-10-14 13:19:52] [pipeline    ] INFO          2b | Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:19:52] [pipeline    ] INFO           3 | Entrenamiento XGBoost (barrido)
+[2026-10-14 13:19:52] [pipeline    ] INFO          3b | Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:19:52] [pipeline    ] INFO           4 | Predicción sobre datos nuevos
+[2026-10-14 13:19:52] [pipeline    ] INFO           5 | Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:19:52] [pipeline    ] INFO           6 | P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:19:52] [pipeline    ] INFO           7 | P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:19:52] [pipeline    ] INFO     
+  Análisis post-entrenamiento:
+[2026-10-14 13:19:52] [pipeline    ] INFO          A1 | Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:52] [pipeline    ] INFO          A2 | Búsqueda de learning rate óptimo
+[2026-10-14 13:19:52] [pipeline    ] INFO          A3 | Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:19:52] [pipeline    ] INFO          A4 | Diagnóstico rápido de predicciones
+[2026-10-14 13:19:52] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   0: Preparación y validación del dataset
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   2: Generación de features cuánticas
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  2b: Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 0: Preparación y validación del dataset
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase0_prepare.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase1_reduce.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 2: Generación de features cuánticas
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2_quantum_features.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 2b: Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2b_optimize.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   0 | Preparación y validación del dataset          | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   1 | Reducción de dimensionalidad (PCA/UMAP)       | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   2 | Generación de features cuánticas              | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  2b | Optimización variacional (COBYLA+MSE)         | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:19:53] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-14 13:19:53] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:19:53] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:18] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:18] [pipeline    ] INFO     FASES DISPONIBLES
+[2026-10-14 13:20:18] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:18] [pipeline    ] INFO     
+  Pipeline principal:
+[2026-10-14 13:20:18] [pipeline    ] INFO           0 | Preparación y validación del dataset
+[2026-10-14 13:20:18] [pipeline    ] INFO           1 | Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:20:18] [pipeline    ] INFO           2 | Generación de features cuánticas
+[2026-10-14 13:20:18] [pipeline    ] INFO          2b | Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:20:18] [pipeline    ] INFO           3 | Entrenamiento XGBoost (barrido)
+[2026-10-14 13:20:18] [pipeline    ] INFO          3b | Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:20:18] [pipeline    ] INFO           4 | Predicción sobre datos nuevos
+[2026-10-14 13:20:18] [pipeline    ] INFO           5 | Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:20:18] [pipeline    ] INFO           6 | P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:20:18] [pipeline    ] INFO           7 | P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:20:18] [pipeline    ] INFO     
+  Análisis post-entrenamiento:
+[2026-10-14 13:20:18] [pipeline    ] INFO          A1 | Curva de aprendizaje vs N muestras
+[2026-10-14 13:20:18] [pipeline    ] INFO          A2 | Búsqueda de learning rate óptimo
+[2026-10-14 13:20:18] [pipeline    ] INFO          A3 | Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:20:18] [pipeline    ] INFO          A4 | Diagnóstico rápido de predicciones
+[2026-10-14 13:20:18] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:35] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:35] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:20:35] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   0: Preparación y validación del dataset
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   2: Generación de features cuánticas
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  2b: Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:20:35] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 0: Preparación y validación del dataset
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase0_prepare.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase1_reduce.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 2: Generación de features cuánticas
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2_quantum_features.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 2b: Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2b_optimize.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   0 | Preparación y validación del dataset          | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   1 | Reducción de dimensionalidad (PCA/UMAP)       | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   2 | Generación de features cuánticas              | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  2b | Optimización variacional (COBYLA+MSE)         | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-14 13:20:35] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:20:35] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:57] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:57] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:20:57] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:57] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:20:57] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:20:57] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:20:57] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:57] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:20:57] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:57] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:20:57] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:57] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:20:57] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:20:57] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:20:57] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:20:57] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:21:13] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:21:13] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:21:13] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-14 13:21:13] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:21:13] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO     FASES DISPONIBLES
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO     
+  Pipeline principal:
+[2026-10-14 13:22:04] [pipeline    ] INFO           0 | Preparación y validación del dataset
+[2026-10-14 13:22:04] [pipeline    ] INFO           1 | Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:22:04] [pipeline    ] INFO           2 | Generación de features cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO          2b | Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:22:04] [pipeline    ] INFO           3 | Entrenamiento XGBoost (barrido)
+[2026-10-14 13:22:04] [pipeline    ] INFO          3b | Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:22:04] [pipeline    ] INFO           4 | Predicción sobre datos nuevos
+[2026-10-14 13:22:04] [pipeline    ] INFO           5 | Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:22:04] [pipeline    ] INFO           6 | P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO           7 | P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:22:04] [pipeline    ] INFO     
+  Análisis post-entrenamiento:
+[2026-10-14 13:22:04] [pipeline    ] INFO          A1 | Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO          A2 | Búsqueda de learning rate óptimo
+[2026-10-14 13:22:04] [pipeline    ] INFO          A3 | Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:22:04] [pipeline    ] INFO          A4 | Diagnóstico rápido de predicciones
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   0: Preparación y validación del dataset
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   2: Generación de features cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  2b: Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 0: Preparación y validación del dataset
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase0_prepare.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 1: Reducción de dimensionalidad (PCA/UMAP)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase1_reduce.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 2: Generación de features cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2_quantum_features.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 2b: Optimización variacional (COBYLA+MSE)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase2b_optimize.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   0 | Preparación y validación del dataset          | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   1 | Reducción de dimensionalidad (PCA/UMAP)       | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   2 | Generación de features cuánticas              | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  2b | Optimización variacional (COBYLA+MSE)         | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO     PLAN DE EJECUCIÓN
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   4: Predicción sobre datos nuevos
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:22:04] [pipeline    ] INFO     ──────────────────────────────────────────────────────────────────────
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] No se ejecutará nada.
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 3: Entrenamiento XGBoost (barrido)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3_train.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 3b: Optimización profunda XGBoost (mejor modelo)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase3b_optimize.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 4: Predicción sobre datos nuevos
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase4_predict.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 5: Análisis y visualizaciones (Xmax + σ)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase5_analysis.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 6: P3 — 4 features + ⟨Z⟩ cuánticas
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase6_p3.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE 7: P4 — Optimización con N filas (COBYLA)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.phase7_p4.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A1: Curva de aprendizaje vs N muestras
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.learning_curve.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A2: Búsqueda de learning rate óptimo
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.lr_search.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A3: Comparación con papers (PRD 111 / PRD 90)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.compare_papers.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       FASE A4: Diagnóstico rápido de predicciones
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       [DRY-RUN] Ejecutaría: src.analysis.diagnostics.run(cfg)
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO     RESUMEN FINAL
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   3 | Entrenamiento XGBoost (barrido)               | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  3b | Optimización profunda XGBoost (mejor modelo)  | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   4 | Predicción sobre datos nuevos                 | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   5 | Análisis y visualizaciones (Xmax + σ)         | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   6 | P3 — 4 features + ⟨Z⟩ cuánticas               | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase   7 | P4 — Optimización con N filas (COBYLA)        | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A1 | Curva de aprendizaje vs N muestras            | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A2 | Búsqueda de learning rate óptimo              | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A3 | Comparación con papers (PRD 111 / PRD 90)     | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Fase  A4 | Diagnóstico rápido de predicciones            | ✅ OK
+[2026-10-14 13:22:04] [pipeline    ] INFO       Tiempo total: 0.0s
+[2026-10-14 13:22:04] [pipeline    ] INFO     ======================================================================
